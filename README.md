@@ -1,6 +1,6 @@
 # CHAQUOPY-BUG
 
-JUST AN EXAMPLE OF A BUG IN CHAQUOPY
+JUST AN EXAMPLE OF A BUG IN CHAQUOPY WHEN WE CALL dynamic_proxy(Runnable) CLASS REPEATLY IN A LOOP
 
     --------- beginning of crash
 E/AndroidRuntime: FATAL EXCEPTION: main
