@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chauopy Bug</string>
+    <string name="start">Start</string>
+    <string name="output_messages">Output messages</string>
+</resources>
