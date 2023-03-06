@@ -1,5 +1,4 @@
 import time
-from com.chaquo.python import Python
 from java import dynamic_proxy
 from java.lang import Runnable
 
