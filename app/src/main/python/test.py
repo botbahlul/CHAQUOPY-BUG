@@ -31,8 +31,8 @@ def working_progressBar(count_value, total, prefix, activity, textview_debug):
     percentage = round(100.0 * count_value/(total),1)
     bar = '█' * filled_up_Length + '-' * (bar_length - filled_up_Length)
 
-    if (int(percentage) % 10 == 0):
-        time.sleep(1)
+    if (int(percentage) % 10 == 0): # 'BARRIER' TO SLOWING DOWN THE CALL
+        time.sleep(1) # 'BARRIER' TO SLOWING DOWN THE CALL
         class R(dynamic_proxy(Runnable)):
             def run(self):
                 textview_debug.setText('%s|%10s|%3s%s\r' %(prefix, bar, int(percentage), '%'))
