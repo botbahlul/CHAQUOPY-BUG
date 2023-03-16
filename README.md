@@ -28,3 +28,22 @@ E/AndroidRuntime: FATAL EXCEPTION: main
         at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)
         at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)
 I/Process: Sending signal. PID: 18871 SIG: 9
+
+Temporary solution to updating a textview without using any 'barriers' is by using static_proxy
+```
+class S(static_proxy(None, Runnable)):
+    def __init__(self, textview_debug, strings):
+        super(S, self).__init__()
+        self.textview_debug = textview_debug
+        self.strings = strings
+
+    @Override(jvoid, [])
+    def run(self):
+        self.textview_debug.setText(self.strings)
+```
+
+and then call it with : 
+
+```
+activity.runOnUiThread(S(textview_debug, strings))
+```
