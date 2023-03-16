@@ -17,6 +17,12 @@ android {
             }
         }
 
+        defaultConfig {
+            python {
+                staticProxy "test"
+            }
+        }
+
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

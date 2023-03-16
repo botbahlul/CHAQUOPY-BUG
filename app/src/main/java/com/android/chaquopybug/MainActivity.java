@@ -48,9 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // CALLING PYTHON SCRIPT test.py
-                PyObject pyObjProgressBar = py.getModule("test").callAttr(
-                        "show_progress_bar",
-                        MainActivity.this, textview_output_messages);
+                runOnUiThread(() -> {
+                    PyObject pyObjProgressBar = py.getModule("test").callAttr(
+                            "show_progress_bar",
+                            MainActivity.this, textview_output_messages);
+                });
 
             }
             catch (Exception e) {
